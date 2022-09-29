@@ -3,6 +3,7 @@ package com.nadetdev.employeemanager.model;
 import javax.persistence.*;
 import java.io.Serializable;
 
+@SuppressWarnings("serial")
 @Entity
 public class Employee implements Serializable {
     @Id
@@ -20,7 +21,8 @@ public class Employee implements Serializable {
     public Employee() {
     }
 
-    public Employee(String name, String email, String jobTitle, String phone, String imageUrl, String employeeCode) {
+    public Employee(String name, String email, String jobTitle, String phone, 
+    		String imageUrl, String employeeCode) {
         this.name = name;
         this.email = email;
         this.jobTitle = jobTitle;
