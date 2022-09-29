@@ -1,6 +1,6 @@
 package com.nadetdev.employeemanager.service;
 
-import com.nadetdev.employeemanager.exception.UserNotFoundException;
+import com.nadetdev.employeemanager.exception.EmployeeNotFoundException;
 import com.nadetdev.employeemanager.model.Employee;
 import com.nadetdev.employeemanager.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +11,7 @@ import java.util.UUID;
 
 @Service
 public class EmployeeService {
+
     private final EmployeeRepository employeeRepository;
 
     @Autowired
@@ -37,7 +38,7 @@ public class EmployeeService {
 
     public Employee findEmployeeById(Long id){
         return employeeRepository.findEmployeeById(id).orElseThrow(
-                () -> new UserNotFoundException("Employee with id " + id + " was not found"));
+                () -> new EmployeeNotFoundException("Employee with id " + id + " was not found"));
     }
 
 
