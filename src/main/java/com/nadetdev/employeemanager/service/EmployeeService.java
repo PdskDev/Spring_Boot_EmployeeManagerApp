@@ -33,7 +33,11 @@ public class EmployeeService {
     }
 
     public void deleteEmployee(Long id){
-        employeeRepository.deleteEmployeeById(id);
+        try {
+            employeeRepository.deleteEmployeeById(id);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public Employee findEmployeeById(Long id){
